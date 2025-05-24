@@ -1,4 +1,5 @@
 # Problem Statement:
+
 Industrial machines are equipped with sensors that monitor temperature, pressure, vibration, and other parameters. Predictive maintenance helps anticipate failures before they occur. The goal is to build a classification model that predicts whether a machine is likely to fail within a specified timeframe.
 
 Tools & Technologies Used:
@@ -22,12 +23,14 @@ Sensor readings (temperature, vibration, pressure, rotation speed)
 Failure flag (binary: 0 for no failure, 1 for failure)
 
 ## Steps & Workflow:
+
 1. Data Exploration and Cleaning
 Handled missing values and outliers using IQR and interpolation techniques.
 
 Performed exploratory data analysis (EDA) to identify trends and variable distributions.
 
 ## 2. Feature Engineering
+
 Created rolling averages and standard deviation features for temporal data.
 
 Calculated rate of change between sensor values to detect abnormal shifts.
@@ -35,6 +38,7 @@ Calculated rate of change between sensor values to detect abnormal shifts.
 Encoded categorical variables and normalized continuous ones.
 
 ## 3. Model Building
+
 Split data into training and test sets (80-20).
 
 Trained multiple models: Logistic Regression (baseline), Random Forest, and XGBoost.
@@ -42,6 +46,7 @@ Trained multiple models: Logistic Regression (baseline), Random Forest, and XGBo
 Performed hyperparameter tuning using GridSearchCV.
 
 ## 4. Model Evaluation
+
 Evaluated model performance using:
 
 Accuracy
@@ -55,6 +60,7 @@ ROC-AUC Curve
 Best Model: XGBoost with 91% accuracy and 87% recall.
 
 ## 5. Deployment
+
 Deployed the model in Azure DataBricks as a batch scoring pipeline.
 
 Output integrated with Power BI for real-time visualization of machine health.
