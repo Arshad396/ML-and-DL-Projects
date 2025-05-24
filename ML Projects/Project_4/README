@@ -1,73 +1,58 @@
-# Problem Statement:
+Machine Predictive Maintenance Classification
+Python scikit-learn Streamlit Pandas Joblib
 
-Industrial machines are equipped with sensors that monitor temperature, pressure, vibration, and other parameters. Predictive maintenance helps anticipate failures before they occur. The goal is to build a classification model that predicts whether a machine is likely to fail within a specified timeframe.
+This application is designed to predict machine failure for predictive maintenance using machine learning. It utilizes a synthetic dataset with 10,000 data points and 14 features. The application is built using a Random Forest model to classify whether the machine will experience failure or not based on the provided inputs.
 
-Tools & Technologies Used:
-Language: Python
+You can view the deployed app here : https://predictive-maintenance-using-machine-learning.streamlit.app/
 
-Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+Google Colab Notebook
+Click here to open the Google Colab notebook for this project.
 
-Machine Learning Models: Logistic Regression, Random Forest, XGBoost
+Kaggle Dataset
+Click here to view the dataset used in this project.
 
-Cloud Platform: Azure DataBricks
+Dataset Description
+The dataset consists of the following features:
 
-Visualization: Power BI
+UID: Unique identifier ranging from 1 to 10000.
+productID: Product quality variant with letters L, M, or H, and a variant-specific serial number.
+air temperature [K]: Generated using a random walk process, later normalized to a standard deviation of 2 K around 300 K.
+process temperature [K]: Generated using a random walk process, normalized to a standard deviation of 1 K, added to the air temperature plus 10 K.
+rotational speed [rpm]: Calculated from power of 2860 W, overlaid with normally distributed noise.
+torque [Nm]: Torque values are normally distributed around 40 Nm with an Ïƒ = 10 Nm and no negative values.
+tool wear [min]: The quality variants H/M/L add 5/3/2 minutes of tool wear to the used tool in the process.
+machine failure: A label that indicates whether the machine has failed in this particular data point for any of the following failure modes.
+Important Note: There are two targets in the dataset. Do not use one of them as a feature, as it will lead to data leakage.
 
-Data Source:
-Simulated dataset with:
+How to Use the Application
+To use the application, follow these steps:
 
-Machine ID
+Make sure you have Python installed on your system.
+Install the required packages by running pip install streamlit pandas scikit-learn in your terminal or command prompt.
+Clone this repository to your local machine.
+Running the Application
+Navigate to the cloned repository in your terminal or command prompt, then run the following command:
 
-Sensor readings (temperature, vibration, pressure, rotation speed)
+streamlit run app.py
+This will launch the application in your web browser.
 
-Failure flag (binary: 0 for no failure, 1 for failure)
+Application Workflow
+Upon launching the application, you will see an input form with various fields corresponding to the features in the dataset.
+Provide the required inputs in the form. Select the product quality variant, air temperature, process temperature, rotational speed, torque, and tool wear.
+Click on the "Predict Failure" button to make a prediction.
+The application will display whether the machine is predicted to experience failure or not.
+Dependencies
+Python 3.x
+Streamlit
+Pandas
+Scikit-learn
+About the Dataset
+The synthetic dataset provided in this application reflects real predictive maintenance encountered in the industry to the best of our knowledge. The dataset contains 10,000 data points with 14 features. It includes a mix of low, medium, and high-quality variants, each with a specific serial number. The features represent various parameters like air temperature, process temperature, rotational speed, torque, and tool wear.
 
-## Steps & Workflow:
+Model Details
+The predictive model used in this application is a Random Forest Classifier, a powerful ensemble learning method that can handle both numerical and categorical features. The model is trained on the synthetic dataset and can predict whether the machine will experience failure based on the input parameters.
 
-1. Data Exploration and Cleaning
-Handled missing values and outliers using IQR and interpolation techniques.
+Disclaimer
+This application uses a synthetic dataset for illustrative purposes. Real predictive maintenance datasets might differ in complexity and distribution. The predictions made by the model are based on the provided inputs and do not guarantee real-world results. Use this application for educational and demonstration purposes only.
 
-Performed exploratory data analysis (EDA) to identify trends and variable distributions.
-
-## 2. Feature Engineering
-
-Created rolling averages and standard deviation features for temporal data.
-
-Calculated rate of change between sensor values to detect abnormal shifts.
-
-Encoded categorical variables and normalized continuous ones.
-
-## 3. Model Building
-
-Split data into training and test sets (80-20).
-
-Trained multiple models: Logistic Regression (baseline), Random Forest, and XGBoost.
-
-Performed hyperparameter tuning using GridSearchCV.
-
-## 4. Model Evaluation
-
-Evaluated model performance using:
-
-Accuracy
-
-Precision, Recall, F1-score
-
-Confusion Matrix
-
-ROC-AUC Curve
-
-Best Model: XGBoost with 91% accuracy and 87% recall.
-
-## 5. Deployment
-
-Deployed the model in Azure DataBricks as a batch scoring pipeline.
-
-Output integrated with Power BI for real-time visualization of machine health.
-
-Outcome & Business Impact:
-Reduced unplanned downtime by 35% in simulation.
-
-Enabled timely maintenance interventions.
-
-Dashboard helped operations team visualize at-risk machines in real-time.
+Feel free to explore the application and experiment with different input values to observe how the predictive model performs for predictive maintenance classification.
