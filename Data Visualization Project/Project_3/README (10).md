@@ -1,11 +1,27 @@
-# A/B Testing in Digital Marketing
-Marketing companies often use A/B testing to evaluate the effectiveness of different campaign strategies. This involves showing different versions of a variable (e.g., a web page or banner) to different segments of an audience simultaneously to determine which version has the greatest impact.
+# 📈 A/B Testing Analysis for Digital Marketing Campaign
+Objective:
+Conducted a data-driven A/B test analysis to measure the effectiveness of digital ad campaigns compared to a control group exposed to Public Service Announcements (PSA) or no ads.
 
-In our A/B test, most participants see ads (experimental group), while a smaller segment sees a Public Service Announcement (PSA) or nothing (control group). Our analysis aims to answer two key questions:
+## Approach:
 
-- Will the campaign be successful?
-- How much of the success can be attributed to the ads?
+Segmented users into an experimental group (ads) and a control group (PSA/nothing).
 
-Using this dataset, we will analyze group performance, assess ad effectiveness, estimate potential revenue, and determine if the differences between the groups are statistically significant. In this guide, we will explore how to perform exploratory data analysis (EDA) and hypothesis testing on A/B test data using Python. 
+Performed exploratory data analysis (EDA) to understand user behavior, conversion rates, and revenue trends across groups.
 
-Original data Source: [Kaggle Marketing A/B Testing Data](https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing/data)
+Calculated key performance metrics such as click-through rate (CTR), conversion rate, and estimated revenue per user.
+
+Applied statistical hypothesis testing (Z-test and t-test) to evaluate whether observed differences in conversions were statistically significant.
+
+Assessed campaign impact and determined incremental revenue attributable to advertising efforts.
+
+### Tools Used:
+Python (Pandas, NumPy, Matplotlib, Seaborn, SciPy), Jupyter Notebook
+
+Key Outcomes:
+
+Identified a significant lift in conversions for the experimental group with a p-value < 0.05.
+
+Quantified the incremental value driven by the ad campaign and provided actionable recommendations to stakeholders.
+
+Developed a reusable Python script for future A/B test evaluation and automated reporting.
+
